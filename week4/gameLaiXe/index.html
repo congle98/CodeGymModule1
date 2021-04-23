@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="docReady()">
+<img src="animated-car-image-0049.gif"  id="car" style="position: relative;top: -400px;left: 110px"  height="36" width="94"/>
+<canvas id="myCanvas" style="border: darkblue solid 5px;position: relative" width="800" height="450"></canvas>
+
+
+
+
+
+</body>
+<script>
+    let x=10;
+    let y=10;
+
+    function upArrowPressed() {
+        let element = document.getElementById("car");
+        element.style.top = parseInt(element.style.top) - 10 + 'px';
+    }
+    function downArrowPressed() {
+        var element = document.getElementById("car");
+        element.style.top = parseInt(element.style.top) + 10 + 'px';
+    }
+    function leftArrowPressed() {
+        var element = document.getElementById("car");
+        element.style.left = parseInt(element.style.left) - 10 + 'px';
+    }
+    function rightArrowPressed() {
+        var element = document.getElementById("car");
+        element.style.left = parseInt(element.style.left) + 10 + 'px';
+
+    }
+    function moveSelection(e) {
+        switch (e.keyCode) { //keycode là mã nút nhấn
+            case 37: // 37 39 38 40 là các mã
+                leftArrowPressed();
+                break;
+            case 39:
+                rightArrowPressed();
+                break;
+            case 38:
+                upArrowPressed();
+                break;
+            case 40:
+                downArrowPressed();
+                break;
+        }
+    }
+    function docReady() {
+        window.addEventListener('keydown', moveSelection); // keydown là tên hoạt động dùng phím
+    }
+</script>
+</html>
+

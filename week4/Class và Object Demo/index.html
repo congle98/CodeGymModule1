@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    class Mobile {
+        constructor(pNumber,name) {
+            this.pn=pNumber;
+            this.name=name;
+            this.message="";
+        }
+        setMessage(message){
+            this.message=message;
+        }
+        getMessage(){
+            return this.message;
+        }
+        sendMessage(name,message){
+            name.setMessage(message);
+        }
+    }
+    let iphone=new Mobile(1,"iphone");
+    let android=new Mobile(2,"android");
+    iphone.sendMessage(android,"anh công đẹp trai vcl");
+    alert(android.getMessage())
+
+</script>
